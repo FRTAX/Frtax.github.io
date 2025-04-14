@@ -1,51 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frtax.github.io</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
-            background: linear-gradient(135deg, #ff7e5f, #2b5876);
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 1.2rem;
-            max-width: 600px;
-        }
-        a {
-            display: block;
-            margin: 10px;
-            padding: 10px 20px;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            text-decoration: none;
-            transition: 0.3s ease-in-out;
-            font-size: 1.2rem;
-        }
-        a:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.2);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>FRTAX Unblocked</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fc4a1a, #f7b733);
+      color: white;
+      text-align: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 30px;
+      background: rgba(0,0,0,0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+
+    .navbar button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      margin-left: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .navbar button:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      display: none;
+      padding-top: 100px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .button {
+      background: rgba(255,255,255,0.3);
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .game-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .game-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      margin: 20px;
+      width: 160px;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .game-card p {
+      margin: 10px 0 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+
+  <div class="navbar">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('games')">Games</button>
+  </div>
+
+  <div id="home" class="section active">
     <h1>Hi there! Welcome.</h1>
     <p>In this website, I will be adding unblocked games. It might take a while, but in the meantime, you can visit my other websites below!</p>
-    <a href="https://frtax.github.io/Eaglercraft-1.9.4/">Eaglercraft 1.9.4</a>
-    <a href="https://frtax.github.io/Eaglercraft-1.8.8/">Eaglercraft 1.8.8</a>
-    <a href="https://frtax.github.io/Resent-Client/">Resent Client</a>
+    <a href="https://frtax.github.io/Eaglercraft-1.9.4/" class="button">Eaglercraft 1.9.4</a>
+    <a href="https://frtax.github.io/Eaglercraft-1.8.8/" class="button">Eaglercraft 1.8.8</a>
+    <a href="https://frtax.github.io/Resent-Client/" class="button">Resent Client</a>
+  </div>
+
+  <div id="games" class="section">
+    <h1>Unblocked Games</h1>
+    <div class="game-grid">
+      <div class="game-card">
+        <a href="games/amongus.html">
+          <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Among_Us_cover_art.jpg" alt="Among Us">
+          <p>Among Us</p>
+        </a>
+      </div>
+      <!-- Add more games here -->
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
